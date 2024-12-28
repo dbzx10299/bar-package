@@ -1,5 +1,5 @@
-import { defineComponent as c, openBlock as m, createBlock as u, resolveDynamicComponent as f, normalizeClass as d, unref as o, normalizeStyle as g, withCtx as y, renderSlot as h } from "vue";
-import './assets/index.css';const w = "_wrapper_1c7sl_1", _ = "_truncate_1c7sl_12", b = "_clamp_1c7sl_22", z = "_monospace_1c7sl_31", r = {
+import { defineComponent as c, openBlock as m, createBlock as u, resolveDynamicComponent as f, normalizeClass as g, unref as o, normalizeStyle as d, withCtx as y, renderSlot as h } from "vue";
+import './assets/index.css';const w = "text_wrapper__piKxD", _ = "text_truncate__WjpO5", b = "text_clamp__1f3gV", z = "text_monospace__fWfcE", r = {
   wrapper: w,
   truncate: _,
   clamp: b,
@@ -34,7 +34,7 @@ import './assets/index.css';const w = "_wrapper_1c7sl_1", _ = "_truncate_1c7sl_1
       return s;
     }
     return (e, n) => (m(), u(f(e.as), {
-      class: d([
+      class: g([
         o(r).wrapper,
         {
           [o(r).monospace]: e.monospace,
@@ -42,7 +42,7 @@ import './assets/index.css';const w = "_wrapper_1c7sl_1", _ = "_truncate_1c7sl_1
           [o(r).clamp]: typeof e.truncate == "number"
         }
       ]),
-      style: g({
+      style: d({
         ...t("text-size", e.size),
         ...t("text-weight", e.weight),
         ...t("text-line-height", e.lineHeight),

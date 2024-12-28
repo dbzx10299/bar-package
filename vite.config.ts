@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { globSync } from 'glob'
-import { relative, extname, resolve } from 'node:path';
+import { relative, extname, resolve, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto'
 import dts from 'vite-plugin-dts'
 
 
@@ -16,6 +17,22 @@ export default defineConfig({
       tsconfigPath: resolve(__dirname, "tsconfig.lib.json")
     })
   ],
+  css: {
+    modules: {
+      generateScopedName: (className, filename) => {
+        const fileName = basename(filename, '.module.css')
+
+        const hash = createHash('sha256')
+          .update(className)
+          .digest('base64')
+          .substring(0, 5)
+          .replace(/\//, 'X')
+          .replace(/\+/g, 'z')
+
+        return `${fileName}_${className}__${hash}`
+      }
+    }
+  },
   build: {
     copyPublicDir: false,
     lib: {

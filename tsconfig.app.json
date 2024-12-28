@@ -6,7 +6,7 @@
       this is the options that creates a lib folder with the types inside of /dist/lib/components/Text/index.vue.d.ts
       instead of just a main.d.ts
     */
-    "composite": false,
+    "composite": true,
 
     "baseUrl": ".",
     "paths": {

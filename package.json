@@ -3,9 +3,21 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/lib/main.d.ts"
+    }
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc -b ./tsconfig.lib.json && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,20 +30,8 @@
     "glob": "^11.0.0",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
-    "vite-plugin-dts": "^4.4.0",
+    "vite-plugin-dts": "^4.2.1",
     "vite-plugin-lib-inject-css": "^2.1.1",
     "vue-tsc": "^2.2.0"
-  },
-  "main": "./dist/main.js",
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/main.js"
-    }
-  },
-  "sideEffects": [
-    "**/*.css"
-  ]
+  }
 }

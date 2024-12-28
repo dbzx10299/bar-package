@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import styles from './styles.module.css'
+import styles from './text.module.css'
 
 type ResponsiveProp<T> = T | {
   sm?: T;

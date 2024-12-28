@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { Text } from '../'
+import { Text } from 'bar-package'
 </script>
 
 <template>
   <div>
-    <h1>test for typescript</h1>
-
     <Text
       as="h1"
       color="#222"
@@ -16,22 +14,7 @@ import { Text } from '../'
       :align="{ sm: 'center', md: 'center', lg: 'left' }"
       style="margin: 64px 0;"
     >
-      This is text from a text component
+      This is text from a typescript text component
     </Text>
   </div>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>

@@ -1,0 +1,37 @@
+<script setup lang="ts">
+import { Text } from '../'
+</script>
+
+<template>
+  <div>
+    <h1>test for typescript</h1>
+
+    <Text
+      as="h1"
+      color="#222"
+      :weight="600"
+      :size="{ sm: '24px', md: '32px', lg: '48px' }"
+      :letterSpacing="{ sm: '-1px', md: '-1.5px', lg: '-3px' }"
+      :lineHeight="{ sm: '2rem', md: '2.5rem', lg: '3.5rem' }"
+      :align="{ sm: 'center', md: 'center', lg: 'left' }"
+      style="margin: 64px 0;"
+    >
+      This is text from a text component
+    </Text>
+  </div>
+</template>
+
+<style scoped>
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>

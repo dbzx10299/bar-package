@@ -7,7 +7,6 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto'
 import dts from 'vite-plugin-dts'
 
-
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [

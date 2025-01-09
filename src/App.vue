@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Text } from 'bar-package'
+import { Text } from '@geist/components'
 </script>
 
 <template>

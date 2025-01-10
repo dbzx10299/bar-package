@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Text } from '@geist/components'
+import { Text } from '@geistjs/components'
 </script>
 
 <template>

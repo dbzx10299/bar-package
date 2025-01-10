@@ -4,7 +4,7 @@ import { Text } from '@geistjs/components'
 
 <template>
   <div>
-    <!-- this is a bug -->
+    <!-- this is a bug a-->
     <Text
       as="h1"
       color="#222"

@@ -6,6 +6,7 @@ import { Text } from '@geistjs/components'
   <div>
     <!-- this is feature a -->
     <!-- this is feature x -->
+    <!-- this is feature z -->
     <Text
       as="h1"
       color="#222"

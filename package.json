@@ -21,9 +21,6 @@
     "preview": "vite preview",
     "prepublishOnly": "npm run build"
   },
-  "peerDependencies": {
-    "vue": "^3.5.13"
-  },
   "devDependencies": {
     "vue": "^3.5.13",
     "@types/node": "^22.10.2",

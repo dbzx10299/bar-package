@@ -24,20 +24,20 @@ export default defineConfig({
         postcssMediaMinMax
       ]
     },
-    modules: {
-      generateScopedName: (className, filename) => {
-        const fileName = basename(filename, '.module.css')
+    // modules: {
+    //   generateScopedName: (className, filename) => {
+    //     const fileName = basename(filename, '.module.css')
 
-        const hash = createHash('sha256')
-          .update(className)
-          .digest('base64')
-          .substring(0, 5)
-          .replace(/\//g, 'X')
-          .replace(/\+/g, 'z')
+    //     const hash = createHash('sha256')
+    //       .update(className)
+    //       .digest('base64')
+    //       .substring(0, 5)
+    //       .replace(/\//g, 'X')
+    //       .replace(/\+/g, 'z')
 
-        return `${fileName}_${className}__${hash}`
-      }
-    }
+    //     return `${fileName}_${className}__${hash}`
+    //   }
+    // }
   },
   build: {
     copyPublicDir: false,

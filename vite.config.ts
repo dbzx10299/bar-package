@@ -6,6 +6,8 @@ import { relative, extname, resolve, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto'
 import dts from 'vite-plugin-dts'
+// @ts-ignore
+import postcssMediaMinMax from 'postcss-media-minmax'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,6 +19,11 @@ export default defineConfig({
     })
   ],
   css: {
+    postcss: {
+      plugins: [
+        postcssMediaMinMax
+      ]
+    },
     modules: {
       generateScopedName: (className, filename) => {
         const fileName = basename(filename, '.module.css')
@@ -25,7 +32,7 @@ export default defineConfig({
           .update(className)
           .digest('base64')
           .substring(0, 5)
-          .replace(/\//, 'X')
+          .replace(/\//g, 'X')
           .replace(/\+/g, 'z')
 
         return `${fileName}_${className}__${hash}`

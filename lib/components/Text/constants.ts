@@ -110,57 +110,6 @@ export const variants: Record<
     letterSpacing: -0.28,
   },
   /**
-   * Button Variants
-   */
-  'button-16': {
-    size: 16,
-    lineHeight: 20,
-    weight: 500,
-  },
-  'button-14': {
-    size: 14,
-    lineHeight: 20,
-    weight: 500,
-  },
-  'button-12': {
-    size: 12,
-    lineHeight: 16,
-    weight: 500,
-  },
-  /**
-   * Label Variants
-   */
-  'label-20': {
-    size: 20,
-    lineHeight: 32,
-    weight: 400,
-  },
-  'label-18': {
-    size: 18,
-    lineHeight: 20,
-    weight: 400,
-  },
-  'label-16': {
-    size: 16,
-    lineHeight: 20,
-    weight: 400,
-  },
-  'label-14': {
-    size: 14,
-    lineHeight: 20,
-    weight: 400,
-  },
-  'label-13': {
-    size: 13,
-    lineHeight: 16,
-    weight: 400,
-  },
-  'label-12': {
-    size: 12,
-    lineHeight: 16,
-    weight: 400,
-  },
-  /**
    * Copy Variants
    */
   'copy-24': {

@@ -4,7 +4,7 @@ import { getTextVariables } from './utils'
 import { mapResponsiveProp } from '../utils'
 import type { ResponsiveProp } from '../types'
 import type { Size, CoreTextVariant, Weight, LineHeight } from './types'
-
+console.log(styles)
 
 interface TextProps {
   as?: string;

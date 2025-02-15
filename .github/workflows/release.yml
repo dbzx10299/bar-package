@@ -22,8 +22,8 @@ jobs:
         run: npm install
 
       # unnecessary since npm install gets our deps and npm publish runs npm build anyways
-      - name: Run Build
-        run: npm run build
+      # - name: Run Build
+      #   run: npm run build
 
       - name: Publish
         run: npm publish --access public

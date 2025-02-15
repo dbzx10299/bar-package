@@ -19,7 +19,7 @@ export default defineConfig({
     })
   ],
   css: {
-    devSourcemap: true,
+    devSourcemap: false,
     postcss: {
       plugins: [
         postcssMediaMinMax

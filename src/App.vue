@@ -20,13 +20,5 @@ import { Text } from '@geistjs/components'
     >
       This is text from a typescript text component
     </Text>
-
-    <Text
-      as="h1"
-      color="#000"
-      :variant="{ sm: 'heading-16', md: 'heading-48' }"
-    >
-      This is text from a typescript text component
-    </Text>
   </div>
 </template>

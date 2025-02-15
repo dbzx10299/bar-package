@@ -2,27 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    /*
-      this is the options that creates a lib folder with the types inside of /dist/lib/components/Text/index.vue.d.ts
-      instead of just a main.d.ts
-    */
-    "composite": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "*": ["*", "./components/*"]
-    },
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": false,
-
+    
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

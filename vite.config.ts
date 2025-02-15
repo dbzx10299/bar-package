@@ -19,6 +19,7 @@ export default defineConfig({
     })
   ],
   css: {
+    devSourcemap: true,
     postcss: {
       plugins: [
         postcssMediaMinMax
@@ -49,7 +50,7 @@ export default defineConfig({
       external: ['vue'],
       input: Object.fromEntries(
         globSync('lib/**/*.{ts,vue}', {
-          ignore: ['lib/**/*.d.ts']
+          ignore: ['lib/**/*types*.ts']
         }).map(file => [
           relative(
             'lib',

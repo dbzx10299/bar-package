@@ -1,62 +1,38 @@
 <script setup lang="ts">
 import styles from './text.module.css'
+import { getTextVariables } from './utils'
+import { mapResponsiveProp } from '../utils'
+import type { ResponsiveProp } from '../types'
+import type { Size, CoreTextVariant, Weight, LineHeight } from './types'
 
-type ResponsiveProp<T> = T | {
-  sm?: T;
-  md?: T;
-  lg?: T;
-};
-
-const breakpoints = ['sm', 'md', 'lg'] as const
-
-function mapResponsiveProp<Value>(prop: string, value: Value): Record<string, Value> {
-  const mappedStyles: Record<string, Value> = {}
-
-  if (typeof value !== 'object') {
-    if (value !== null) {
-      mappedStyles[`--${prop}`] = value
-    }
-  } else {
-    let previousBreakpointValue: Value | undefined;
-
-    breakpoints.forEach(breakpoint => {
-      const breakpointValue = (value as unknown as Record<(typeof breakpoint)[number], Value>)[breakpoint]
-      if (
-        breakpointValue !== null && 
-        breakpointValue !== undefined &&
-        breakpointValue !== previousBreakpointValue
-      ) {
-        mappedStyles[`--${breakpoint}-${prop}`] = breakpointValue
-        previousBreakpointValue = breakpointValue
-      }
-    })
-  }
-
-  return mappedStyles
-}
 
 interface TextProps {
   as?: string;
   color?: string;
-  monospace?: boolean;
-  size?: ResponsiveProp<string | number>;
-  weight?: ResponsiveProp<number>;
-  lineHeight?: ResponsiveProp<string | number>;
-  letterSpacing?: ResponsiveProp<string>;
+  size?: ResponsiveProp<Size>;
+  variant?: ResponsiveProp<CoreTextVariant>;
   align?: ResponsiveProp<'left' | 'center' | 'right'>;
-  truncate?: boolean | number;
   transform?: 'none' | 'lowercase' | 'capitalize' | 'uppercase';
+  lineHeight?: LineHeight;
+  weight?: Weight;
+  monospace?: boolean;
+  wrap?: boolean;
+  truncate?: boolean | number;
 }
 
 const {
   as = 'p',
+  size = 14,
+  lineHeight,
+  weight,
   color = '#a1a1a1',
-  size = '1rem',
-  weight = 400,
-  lineHeight = 1.5,
-  letterSpacing = 'initial'
+  transform,
+  align,
+  truncate,
+  wrap = true,
+  monospace = false,
+  variant
 } = defineProps<TextProps>()
-
 </script>
 
 <template>
@@ -66,17 +42,15 @@ const {
       styles.wrapper,
       {
         [styles.monospace]: monospace,
+        [styles.nowrap]: !wrap,
         [styles.truncate]: truncate === true,
         [styles.clamp]: typeof truncate === 'number'
       }
     ]"
     :style="{
-      ...(mapResponsiveProp('text-size', size)),
-      ...(mapResponsiveProp('text-weight', weight)),
-      ...(mapResponsiveProp('text-line-height', lineHeight)),
-      ...(mapResponsiveProp('text-letter-spacing', letterSpacing)),
-      ...(mapResponsiveProp('text-align', align)),
       '--text-color': color,
+      ...getTextVariables({ size, lineHeight, weight, variant }),
+      ...(mapResponsiveProp('text-align', align)),
       ...(typeof truncate === 'number' && { '--text-clamp': truncate }),
       ...(typeof transform === 'string' && { '--text-transform': transform })
     }"

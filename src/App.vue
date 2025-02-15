@@ -1,21 +1,22 @@
 <script setup lang="ts">
+
+// https://nodejs.org/api/packages.html#packages_self_referencing_a_package_using_its_name
 import { Text } from '@geistjs/components'
+
+// import { Text } from '../lib/main.ts'
+
+/**
+ * make sure to check the include option in tsconfig.app.json in order to make this work
+ * otherwise it can't find ../lib/main.ts
+ */
 </script>
 
 <template>
   <div>
-    <!-- this is feature a -->
-    <!-- this is feature x -->
-    <!-- this is feature z -->
     <Text
       as="h1"
-      color="#222"
-      :weight="600"
-      :size="{ sm: '24px', md: '32px', lg: '48px' }"
-      :letterSpacing="{ sm: '-1px', md: '-1.5px', lg: '-3px' }"
-      :lineHeight="{ sm: '2rem', md: '2.5rem', lg: '3.5rem' }"
-      :align="{ sm: 'center', md: 'center', lg: 'left' }"
-      style="margin: 64px 0;"
+      color="#a1a1a1"
+      :variant="{ sm: 'heading-16', md: 'heading-48' }"
     >
       This is text from a typescript text component
     </Text>

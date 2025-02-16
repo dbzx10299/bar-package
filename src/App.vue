@@ -4,11 +4,7 @@
 import { Text } from '@geistjs/components'
 
 // import { Text } from '../lib/main.ts'
-
-/**
- * make sure to check the include option in tsconfig.app.json in order to make this work
- * otherwise it can't find ../lib/main.ts
- */
+const variants = ['heading-56', 'heading-48', 'heading-32', 'copy-24', 'copy-20']
 </script>
 
 <template>
@@ -18,7 +14,7 @@ import { Text } from '@geistjs/components'
       color="#a1a1a1"
       :variant="{ sm: 'heading-16', md: 'heading-48' }"
     >
-      This is text from a typescript text component asdf
+      This is text from a text component, more text
     </Text>
   </div>
 </template>

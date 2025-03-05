@@ -30,6 +30,7 @@ export function mapResponsiveProp<Value>(prop: string, value: Value): Record<str
     })
   }
 
+  console.log('mapped: ', mappedStyles)
   return mappedStyles
 }
 

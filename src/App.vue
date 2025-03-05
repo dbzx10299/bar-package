@@ -1,14 +1,19 @@
 <script setup lang="ts">
 
 // https://nodejs.org/api/packages.html#packages_self_referencing_a_package_using_its_name
-import { Text } from '@geistjs/components'
+import { Text, Grid } from '@geistjs/components'
 
-// import { Text } from '../lib/main.ts'
-const variants = ['heading-56', 'heading-48', 'heading-32', 'copy-24', 'copy-20']
+// import { Text, Grid } from '../lib/main.ts'
 </script>
 
 <template>
   <div>
+    <Grid>
+      <Grid.Cell>1</Grid.Cell>
+      <Grid.Cell>2</Grid.Cell>
+      <Grid.Cell>3</Grid.Cell>
+    </Grid>
+
     <Text
       as="h1"
       color="#a1a1a1"

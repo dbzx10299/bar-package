@@ -3,5 +3,5 @@ import styles from './grid.module.css'
 </script>
 
 <template>
-  <div :class="styles.wrapper"><slot/></div>
+  <div :class="styles.cell"><slot/></div>
 </template>

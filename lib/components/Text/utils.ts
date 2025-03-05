@@ -20,7 +20,6 @@ export function getTextVariables({
   weight?: Weight;
   variant?: ResponsiveProp<CoreTextVariant>;
 }) {
-
   // Handle variants first
   if (variant) {
     // If the variant is a string, return static variables
